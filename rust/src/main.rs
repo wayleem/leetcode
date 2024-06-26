@@ -47,6 +47,16 @@ fn contains_duplicate(nums: Vec<i32>) -> bool {
     return false;
 }
 
+fn minimum_operations(nums: Vec<i32>) -> i32 {
+    let mut op: i32 = 0;
+    for i in nums.iter() {
+        if *i % 3 > 0 {
+            op += 1;
+        }
+    }
+    return op;
+}
+
 #[test]
 fn test_two_sum() {
     assert_eq!(two_sum(vec![2, 7, 11, 15], 9), [0, 1]);
@@ -59,3 +69,4 @@ fn test_contains_duplicate() {
     assert_eq!(contains_duplicate(vec![1, 2, 3]), false);
     assert_eq!(contains_duplicate(vec![1, 2, 1]), true);
 }
+
